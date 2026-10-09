@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdul Khaliq — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #1e293b;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 0;
+      position: relative;
+    }
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #160d3d 0%, #201353 50%, #2e1a75 100%);
+      color: #ffffff;
+      padding: 38px 40px 32px 40px;
+    }
+    .header-name {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .header-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #c4b5fd;
+      letter-spacing: 0.3px;
+      margin-bottom: 20px;
+    }
+    .header-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 22px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6.5px;
+      text-decoration: none;
+      color: #e2e8f0;
+    }
+    .contact-item svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: #a78bfa;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* CONTENT BODY */
+    .content-body {
+      padding: 32px 40px 40px 40px;
+    }
+
+    /* SUMMARY */
+    .summary-text {
+      font-size: 13px;
+      line-height: 1.65;
+      color: #334155;
+      margin-bottom: 24px;
+    }
+    .summary-text strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .summary-text .highlight {
+      color: #4f46e5;
+      font-weight: 600;
+    }
+
+    /* SKILLS PILLS */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 34px;
+    }
+    .skill-pill {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #4f46e5;
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      letter-spacing: 0.1px;
+    }
+
+    /* MAIN COLUMNS */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 36px;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 28px;
+    }
+
+    /* SECTION TITLES */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .section-icon {
+      width: 26px;
+      height: 26px;
+      background: #eef2ff;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4f46e5;
+    }
+    .section-icon svg {
+      width: 15px;
+      height: 15px;
+      stroke: #4f46e5;
+      stroke-width: 2;
+      fill: none;
+    }
+    .section-title {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      color: #0f172a;
+      text-transform: uppercase;
+    }
+
+    /* EXPERIENCE TIMELINE */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 4.5px;
+      top: 6px;
+      bottom: 12px;
+      width: 1.5px;
+      background: #e2e8f0;
+    }
+    .experience-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+    .experience-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -20px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2.5px solid #6366f1;
+    }
+    .job-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .job-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .job-period {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+    .job-company {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #4f46e5;
+      margin-bottom: 8px;
+    }
+    .job-company span {
+      color: #64748b;
+      font-weight: 500;
+    }
+    .job-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .job-bullets li {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #475569;
+      margin-bottom: 5px;
+      position: relative;
+      padding-left: 14px;
+    }
+    .job-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #94a3b8;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    /* RIGHT COLUMN (TOOLS & EDUCATION) */
+    .right-column {
+      border-left: 1px solid #f1f5f9;
+      padding-left: 28px;
+    }
+    .tools-list {
+      list-style: none;
+      margin-bottom: 34px;
+    }
+    .tools-list li {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #334155;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tools-list li::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #6366f1;
+      display: inline-block;
+    }
+
+    /* EDUCATION */
+    .edu-item {
+      margin-bottom: 18px;
+    }
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+    .edu-degree {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+      margin-bottom: 2px;
+    }
+    .edu-school {
+      font-size: 12px;
+      font-weight: 600;
+      color: #4f46e5;
+      margin-bottom: 2px;
+    }
+    .edu-year {
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="header-name">Abdul Khaliq</h1>
+      <p class="header-title">Lead UI/UX Designer &nbsp;|&nbsp; Product Designer &nbsp;|&nbsp; Web Design &nbsp;|&nbsp; SaaS &amp; ERP Solutions</p>
+      <div class="header-contacts">
+        <span class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          ak.abdulkhaliq37@gmail.com
+        </span>
+        <span class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +92 320 1363472
+        </span>
+        <span class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Karachi, Pakistan
+        </span>
+        <span class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M16 8h4M4 8h4.5a2.5 2.5 0 0 1 0 5H4v-5zm0 5h5a2.5 2.5 0 0 1 0 5H4v-5z"/></svg>
+          behance.net/abdulkhaliq95
+        </span>
+        <span class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/abdulkhaliq37
+        </span>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <div class="content-body">
+      <!-- SUMMARY -->
+      <p class="summary-text">
+        <strong>Results-driven Lead UI/UX Designer</strong> with <strong>4+ years of experience</strong> creating intuitive, user-centered web and mobile experiences across <span class="highlight">SaaS, ERP, eCommerce, and digital products</span>. Skilled in <span class="highlight">UX research, wireframing, prototyping, UI design, and design systems</span>, with strong expertise in <strong>Figma</strong>. Experienced in translating business requirements into <span class="highlight">scalable, accessible, and conversion-focused digital products</span> while collaborating with developers and stakeholders.
+      </p>
+
+      <!-- SKILLS PILLS -->
+      <div class="skills-container">
+        <span class="skill-pill">UI/UX Design</span>
+        <span class="skill-pill">UX Research</span>
+        <span class="skill-pill">Wireframing</span>
+        <span class="skill-pill">Prototyping</span>
+        <span class="skill-pill">SaaS Product Design</span>
+        <span class="skill-pill">Responsive Design</span>
+        <span class="skill-pill">Mobile App Design</span>
+        <span class="skill-pill">HTML / CSS</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">React.js / Next.js</span>
+      </div>
+
+      <!-- MAIN TWO COLUMNS -->
+      <div class="columns">
+        <!-- LEFT: WORK EXPERIENCE -->
+        <div class="left-column">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h2 class="section-title">Work Experience</h2>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-line"></div>
+
+            <!-- JOB 1 -->
+            <div class="experience-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <h3 class="job-title">Lead UI/UX Designer</h3>
+                <span class="job-period">2024 - Present</span>
+              </div>
+              <div class="job-company">IOT Sands <span>· Onsite, Karachi</span></div>
+              <ul class="job-bullets">
+                <li>Lead UI/UX design for SaaS, ERP, web, and mobile products.</li>
+                <li>Create user flows, wireframes, prototypes, and high-fidelity UI designs in Figma.</li>
+                <li>Develop scalable design systems and responsive interfaces.</li>
+                <li>Collaborate with developers and stakeholders to deliver user-centered digital experiences.</li>
+              </ul>
+            </div>
+
+            <!-- JOB 2 -->
+            <div class="experience-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <h3 class="job-title">UI/UX Designer &amp; Web Developer</h3>
+                <span class="job-period">2022 - 2024</span>
+              </div>
+              <div class="job-company">IOT Sata <span>· Onsite, Karachi</span></div>
+              <ul class="job-bullets">
+                <li>Designed web, mobile, SaaS, and ERP interfaces focused on usability and modern UI.</li>
+                <li>Created wireframes, user flows, prototypes, and high-fidelity designs using Figma.</li>
+                <li>Developed responsive interfaces using HTML, CSS, JavaScript, React.js, and Next.js.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: TOOLS & EDUCATION -->
+        <div class="right-column">
+          <!-- TOOLS -->
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h2 class="section-title">Tools</h2>
+          </div>
+          <ul class="tools-list">
+            <li>Figma</li>
+            <li>FigJam</li>
+            <li>Adobe Illustrator</li>
+            <li>VS Code</li>
+            <li>Git &amp; GitHub</li>
+            <li>ChatGPT / AI Tools</li>
+          </ul>
+
+          <!-- EDUCATION -->
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h2 class="section-title">Education</h2>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Intermediate (Computer Science)</div>
+            <div class="edu-school">Iqra Intermediate College</div>
+            <div class="edu-year">2024 - 2026</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Matriculation (Science)</div>
+            <div class="edu-school">Good Luck School</div>
+            <div class="edu-year">2023 - 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

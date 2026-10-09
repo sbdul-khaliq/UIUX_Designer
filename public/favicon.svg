@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <linearGradient id="akGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background with subtle border -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="#3f3f46" stroke-width="2"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="none" stroke="url(#akGrad)" stroke-width="1.5" stroke-opacity="0.4"/>
+  
+  <!-- Stylized AK Monogram for Abdul Khaliq -->
+  <g fill="none" stroke="url(#akGrad)" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <!-- Letter A -->
+    <path d="M 16 44 L 25 18 L 34 44" stroke-width="4.5"/>
+    <path d="M 19.5 35 L 30.5 35" stroke-width="4"/>
+    
+    <!-- Letter K -->
+    <path d="M 39 18 L 39 44" stroke-width="4.5"/>
+    <path d="M 50 20 L 39 31 L 51 44" stroke-width="4.5"/>
+  </g>
+  <!-- Designer Dot Accent -->
+  <circle cx="51" cy="18" r="2.5" fill="#38bdf8"/>
+</svg>
